@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framework CSS – TARA Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/framework.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-title {
+            @apply text-xl font-bold mb-2;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Mengenal Framework CSS
+            </h1>
+        </div>
+    </header>
+
+    <!-- Konten -->
+    <main class="max-w-3xl mx-auto px-4 py-10">
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🗂️ Kategori: Web Development</span>
+            <span>🗓️ Dipublikasikan: 17 Juli 2025</span>
+        </div>
+
+        <!-- Isi Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+            <p class="mb-6">
+                <strong class="text-xl">Apa itu Framework CSS?</strong><br>
+                Framework CSS adalah kumpulan file CSS siap pakai yang dibuat untuk mempercepat proses styling halaman
+                web.
+                Dengan menggunakan framework, kita tidak perlu membangun semuanya dari nol karena banyak komponen dasar
+                sudah disediakan.
+            </p>
+
+            <p class="mb-6">
+                <strong class="text-xl">Mengapa Menggunakan Framework CSS?</strong><br>
+                Berikut beberapa alasan mengapa framework sangat membantu:
+            <ul class="list-disc pl-5 mt-2">
+                <li class="mb-2 font-bold">⚡ Mempercepat proses pengembangan</li>
+                <li class="mb-2 font-bold">🎨 Konsistensi desain antar halaman</li>
+                <li class="mb-2 font-bold">📱 Responsif secara default</li>
+                <li class="mb-2 font-bold">📦 Tersedia komponen siap pakai</li>
+            </ul>
+            </p>
+
+            <p class="mb-6">
+                <strong class="text-xl">Contoh Framework CSS Populer</strong>
+            </p>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-bold">1. Bootstrap</h3>
+                <p class="mb-2">
+                    Bootstrap adalah salah satu framework CSS tertua dan paling populer. Dikembangkan oleh tim Twitter,
+                    Bootstrap menggunakan sistem grid 12 kolom yang memudahkan layout responsif.
+                    Selain itu, Bootstrap juga menyediakan komponen siap pakai seperti tombol, navbar, carousel, dan
+                    banyak lagi.
+                </p>
+                <pre><code>&lt;button class="btn btn-primary"&gt;Klik Aku&lt;/button&gt;</code></pre>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-bold">2. Tailwind CSS</h3>
+                <p class="mb-2">
+                    Tailwind CSS merupakan framework berbasis utility-first, yang berarti kamu menulis class kecil-kecil
+                    untuk membentuk komponen. Sangat fleksibel, ringan, dan banyak digunakan oleh developer modern.
+                </p>
+                <pre><code>&lt;button class="bg-blue-600 text-white px-4 py-2 rounded"&gt;Klik Aku&lt;/button&gt;</code></pre>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-lg font-bold">3. Bulma</h3>
+                <p class="mb-2">
+                    Bulma adalah framework CSS yang berbasis Flexbox. Desainnya bersih, modular, dan cocok untuk pemula
+                    maupun profesional yang ingin solusi ringan tapi powerful.
+                </p>
+            </div>
+
+            <p class="mb-6">
+                <strong class="text-xl">Kapan Sebaiknya Tidak Menggunakan Framework?</strong><br>
+                Framework sangat membantu, tapi kadang justru membatasi kreativitas dan menambah ukuran file.
+                Sebaiknya hindari jika:
+            <ul class="list-disc pl-5 mt-2">
+                <li class="mb-2 font-bold">🌀 Desain terlalu custom</li>
+                <li class="mb-2 font-bold">🏋️‍♂️ Ukuran file sangat diperhitungkan</li>
+                <li class="mb-2 font-bold">🧠 Fokus ingin belajar CSS dari dasar</li>
+            </ul>
+            </p>
+
+            <blockquote class="mb-6">
+                "Gunakan framework sebagai alat bantu, bukan sebagai tongkat kruk. Kuasai CSS dasarnya dulu."
+            </blockquote>
+
+            <p class="mb-6">
+                <strong class="text-xl">Kesimpulan</strong><br>
+                Framework CSS membantu mempercepat proses pengembangan dan memberikan fondasi desain yang konsisten.
+                Bootstrap cocok untuk kamu yang ingin cepat dan stabil, sedangkan Tailwind cocok buat kamu yang suka
+                fleksibilitas dan kontrol penuh terhadap tampilan.
+            </p>
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+
+</body>
+
+</html>

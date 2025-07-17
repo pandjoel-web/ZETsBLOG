@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget Flutter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/uiux.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-title {
+            @apply text-xl font-bold mb-2;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+        <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+               Memahami Widget di Flutter<br>
+              Dasar membangun tampilan aplikasi Flutter menggunakan widget
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>📦 Topik: Widget Flutter</span>
+            <span>📱 Mobile UI</span>
+            <span>🎯 Bahasa: Dart</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa Itu Widget?</h2>
+            <p>
+                Dalam Flutter, <strong>semua elemen UI</strong> adalah <strong>widget</strong> — dari tombol, teks,
+                gambar, layout, hingga animasi.
+                Widget bisa dibilang seperti "lego" yang membangun tampilan aplikasi Flutter.
+            </p>
+
+            <h2>Kategori Widget</h2>
+            <p>Widget Flutter bisa dibagi ke beberapa kategori utama:</p>
+            <ul>
+                <li><strong>Structural Widget</strong> – seperti <code>Container</code>, <code>Column</code>,
+                    <code>Row</code></li>
+                <li><strong>Styling Widget</strong> – seperti <code>Padding</code>, <code>Align</code>,
+                    <code>Center</code></li>
+                <li><strong>Input Widget</strong> – seperti <code>TextField</code>, <code>Checkbox</code>,
+                    <code>Slider</code></li>
+                <li><strong>Display Widget</strong> – seperti <code>Text</code>, <code>Image</code>, <code>Icon</code>
+                </li>
+                <li><strong>Interactive Widget</strong> – seperti <code>ElevatedButton</code>,
+                    <code>GestureDetector</code></li>
+            </ul>
+
+            <h2>Stateless vs Stateful Widget</h2>
+            <p>Widget dibagi menjadi dua jenis utama:</p>
+            <ul>
+                <li><strong>StatelessWidget</strong> → Tidak menyimpan state (kondisi berubah)</li>
+                <li><strong>StatefulWidget</strong> → Menyimpan dan merespons perubahan state</li>
+            </ul>
+
+            <h3>Contoh StatelessWidget</h3>
+            <pre><code class="language-dart">
+class MyTextWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Text("Hello Flutter!");
+  }
+}
+      </code></pre>
+
+            <h3>Contoh StatefulWidget</h3>
+            <pre><code class="language-dart">
+class CounterWidget extends StatefulWidget {
+  @override
+  _CounterWidgetState createState() => _CounterWidgetState();
+}
+
+class _CounterWidgetState extends State&lt;CounterWidget&gt; {
+  int counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text("Count: \$counter"),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              counter++;
+            });
+          },
+          child: Text("Tambah"),
+        )
+      ],
+    );
+  }
+}
+      </code></pre>
+
+            <h2>Widget Layout Populer</h2>
+            <ul>
+                <li><strong>Row & Column:</strong> Layout horizontal dan vertikal</li>
+                <li><strong>Container:</strong> Untuk membungkus dan menstyling widget lain</li>
+                <li><strong>Expanded:</strong> Untuk mengisi ruang kosong di Row/Column</li>
+                <li><strong>Stack:</strong> Untuk overlay/memposisikan widget bertumpuk</li>
+            </ul>
+
+            <h2>Contoh Layout Sederhana</h2>
+            <pre><code class="language-dart">
+Widget build(BuildContext context) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Text("Selamat datang!"),
+      SizedBox(height: 20),
+      ElevatedButton(
+        onPressed: () {},
+        child: Text("Mulai"),
+      ),
+    ],
+  );
+}
+      </code></pre>
+
+            <h2>Tips Menggunakan Widget</h2>
+            <ul>
+                <li>Gunakan widget kecil agar mudah dipelihara</li>
+                <li>Pisahkan layout ke file/class berbeda bila kompleks</li>
+                <li>Gunakan padding, margin, dan alignment dengan konsisten</li>
+                <li>Manfaatkan widget <code>Builder</code> dan <code>MediaQuery</code> untuk responsif</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Widget adalah pondasi utama dalam Flutter. Dengan memahami cara kerja dan jenis-jenis widget,
+                kamu bisa membuat UI yang powerful dan fleksibel. Teruslah bereksperimen dan manfaatkan dokumentasi
+                resmi Flutter!
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

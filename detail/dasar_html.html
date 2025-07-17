@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dasar Html</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/web.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Dasar HTML - Awal Mula Membuat Website
+            </h1>
+        </div>
+    </header>
+
+    <!-- Konten -->
+    <main class="max-w-3xl mx-auto px-4 py-10">
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4">
+            <span>🗂️ Kategori: Web Development</span>
+            <span>🗓️ Dipublikasikan: 17 Juli 2025</span>
+        </div>
+
+        <!-- Isi Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+            <p>
+                Selamat datang di artikel ini! Kali ini kita akan membahas tentang pentingnya memahami dasar-dasar HTML
+                dalam dunia pengembangan web.
+                HTML adalah fondasi dari semua halaman web yang kita lihat di internet.
+            </p>
+
+            <h2>Kenapa Harus Belajar HTML?</h2>
+            <p>
+                HTML (HyperText Markup Language) memungkinkan kita membuat struktur dasar sebuah website. Tanpa HTML,
+                tidak ada cara mudah untuk menampilkan teks,
+                gambar, tautan, dan elemen penting lainnya di web.
+            </p>
+
+            <blockquote>
+                "Belajar HTML itu seperti belajar alfabet sebelum mulai menulis cerita."
+            </blockquote>
+
+            <p>
+                Bahkan jika kamu berencana jadi desainer atau backend developer, memahami HTML akan mempermudah
+                kolaborasi tim dan komunikasi antar peran.
+            </p>
+
+            <h2>Dasar Struktur HTML</h2>
+            <p>
+                Sebuah dokumen HTML umumnya terdiri dari elemen-elemen seperti:
+            </p>
+            <ul>
+                <li><strong>&lt;html&gt;</strong> – Elemen utama pembungkus seluruh konten</li>
+                <li><strong>&lt;head&gt;</strong> – Untuk metadata, link, dan judul halaman</li>
+                <li><strong>&lt;body&gt;</strong> – Semua konten utama website ditampilkan di sini</li>
+            </ul>
+
+            <p>
+                Contoh sederhana HTML:
+            </p>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Halaman Saya&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Halo Dunia!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Menguasai HTML bukan sekadar keharusan untuk developer frontend, tapi bekal berharga untuk siapa saja
+                yang ingin memahami cara kerja web.
+                Semoga artikel ini bisa membantumu memulai perjalanan sebagai pengembang web!
+            </p>
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+
+</body>
+
+</html>

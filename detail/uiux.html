@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desain UI/UX Flutter dengan Figma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/uiux.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-title {
+            @apply text-xl font-bold mb-2;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    
+
+     <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Desain UI/UX Flutter Menggunakan Figma <br>
+                Panduan praktis menyusun UI/UX aplikasi Flutter dengan alur kerja profesional.
+            </h1>
+        </div>
+    </header>
+
+    <!-- Konten -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🗂️ Kategori: UI/UX Design</span>
+            <span>📱 Platform: Flutter</span>
+            <span>🛠️ Tools: Figma</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+            <p>
+                Flutter adalah framework UI yang powerful untuk membangun aplikasi mobile secara cross-platform.
+                Namun, untuk menghasilkan aplikasi yang benar-benar nyaman digunakan, desain UI/UX yang solid sangat
+                penting.
+                Di sinilah Figma berperan sebagai alat desain utama sebelum proses development dimulai.
+            </p>
+
+            <h2>Kenapa Harus Desain Dulu di Figma?</h2>
+            <ul>
+                <li>🎨 Visualisasi layout sebelum ngoding</li>
+                <li>🔄 Revisi desain lebih cepat dibanding ngedit kode</li>
+                <li>🧠 Bisa fokus ke logika Flutter tanpa mikir warna/font</li>
+                <li>📲 Simulasi UX langsung via prototype interaktif</li>
+            </ul>
+
+            <h2>Langkah Mendesain Aplikasi Flutter di Figma</h2>
+            <ol class="list-decimal pl-5">
+                <li><strong>Buat Frame Sesuai Ukuran</strong><br>
+                    Gunakan frame mobile seperti 360x800 (Android) atau iPhone 14 Pro. Figma sudah menyediakan
+                    presetnya.</li>
+
+                <li><strong>Gunakan Grid dan Auto Layout</strong><br>
+                    Supaya layout tetap rapi dan responsif ke berbagai ukuran device.</li>
+
+                <li><strong>Gunakan Style Consistent</strong><br>
+                    Buat text style, color style, dan component agar mudah di-maintain dan cocok untuk Flutter UI reuse.
+                </li>
+
+                <li><strong>Simulasikan Alur UX</strong><br>
+                    Hubungkan antar frame jadi prototype interaktif, tes flow sebelum development.</li>
+
+                <li><strong>Export Asset (SVG/PNG)</strong><br>
+                    Gambar ikon atau ilustrasi bisa diexport langsung untuk digunakan di Flutter dengan `Image.asset()`
+                    atau `SvgPicture.asset()`.</li>
+            </ol>
+
+            <h2>Tips Penting Desain UI Flutter</h2>
+            <ul>
+                <li>📏 Gunakan <strong>8px grid system</strong> agar layout pas dengan Flutter Padding/Margin</li>
+                <li>📱 Perhatikan <strong>Safe Area</strong> (hindari notch & status bar)</li>
+                <li>🎯 Fokus ke <strong>usability dan aksesibilitas</strong>: ukuran font, jarak tombol, dll</li>
+                <li>🔁 Desain <strong>scalable</strong>: buat reusable component di Figma (bisa mapping ke widget)</li>
+            </ul>
+
+            <h2>Contoh Mapping Komponen Figma ke Flutter</h2>
+            <table class="table-auto border border-gray-300 w-full text-sm mt-4">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="border px-4 py-2 text-left">Komponen Figma</th>
+                        <th class="border px-4 py-2 text-left">Flutter Widget</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">Text</td>
+                        <td class="border px-4 py-2">Text()</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Button</td>
+                        <td class="border px-4 py-2">ElevatedButton(), TextButton()</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Card / Container</td>
+                        <td class="border px-4 py-2">Container(), Card()</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">List Item</td>
+                        <td class="border px-4 py-2">ListTile()</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Prototyping Interaktif</h2>
+            <p>
+                Figma memungkinkan membuat simulasi klik antar halaman, cocok buat user testing awal.
+                Setelah valid, kamu bisa breakdown tiap elemen jadi widget dan mulai ngoding di Flutter.
+            </p>
+
+            <blockquote>
+                “Desain dulu yang nyaman, baru koding yang mantap.” – Developer bijak
+            </blockquote>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Workflow profesional dalam membangun aplikasi Flutter sebaiknya dimulai dari desain UI/UX yang solid di
+                Figma.
+                Dengan begitu, kamu bisa lebih hemat waktu, meminimalisir revisi di tengah jalan, dan menghasilkan
+                pengalaman pengguna yang optimal.
+            </p>
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>

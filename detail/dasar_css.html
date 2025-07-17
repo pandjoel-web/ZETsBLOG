@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dasar CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/css.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Dasar CSS untuk Pemula
+            </h1>
+        </div>
+    </header>
+
+    <!-- Konten -->
+    <main class="max-w-3xl mx-auto px-4 py-10">
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4">
+            <span>🗂️ Kategori: Web Development</span>
+            <span>🗓️ Dipublikasikan: 17 Juli 2025</span>
+        </div>
+
+        <!-- Isi Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+            <p>
+                CSS (Cascading Style Sheets) adalah teknologi penting dalam pengembangan web yang digunakan untuk
+                mengatur tampilan elemen HTML di halaman web.
+                Dengan CSS, kita bisa mengubah warna, ukuran, layout, hingga animasi pada website.
+            </p>
+
+            <h2>Apa Itu CSS?</h2>
+            <p>
+                CSS merupakan bahasa desain yang bertugas mempercantik halaman web. Jika HTML adalah kerangka, maka CSS
+                adalah gaya dan pakaian yang dikenakan oleh halaman tersebut.
+            </p>
+
+            <blockquote>
+                "CSS membuat halaman web tidak hanya berfungsi, tetapi juga indah dipandang."
+            </blockquote>
+
+            <p>
+                Tanpa CSS, halaman web hanya akan menampilkan teks hitam di latar putih, tanpa warna, tanpa tata letak
+                yang menarik.
+            </p>
+
+            <h2>Cara Menyisipkan CSS</h2>
+            <p>
+                Ada tiga cara umum untuk menggunakan CSS:
+            </p>
+            <ol>
+                <li><strong>Inline CSS</strong> – langsung di dalam tag HTML</li>
+                <li><strong>Internal CSS</strong> – di dalam tag &lt;style&gt; di bagian &lt;head&gt;</li>
+                <li><strong>External CSS</strong> – melalui file .css terpisah</li>
+            </ol>
+
+            <h3>Contoh Internal CSS</h3>
+            <pre><code>&lt;style&gt;
+  body {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+&lt;/style&gt;
+</code></pre>
+
+            <h2>Selektor dan Properti</h2>
+            <p>
+                CSS bekerja dengan selektor dan properti. Contohnya:
+            </p>
+            <pre><code>p {
+  font-size: 16px;
+  color: blue;
+}</code></pre>
+
+            <p>
+                Kode di atas akan membuat semua paragraf (&lt;p&gt;) memiliki ukuran teks 16 piksel dan berwarna biru.
+            </p>
+
+            <h2>Penutup</h2>
+            <p>
+                Menguasai CSS akan membuka pintu ke dunia desain web yang lebih dinamis dan menarik. Setelah memahami
+                dasarnya, kamu bisa lanjut ke Flexbox, Grid, dan bahkan animasi menggunakan CSS!
+            </p>
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+
+</body>
+
+</html>

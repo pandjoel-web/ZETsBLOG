@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dasar Java</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/java.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+          <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+              Dasar Bahasa Pemrograman Java <br>
+              Pemahaman dasar untuk mulai ngoding dengan Java
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🧠 Bahasa: Java</span>
+            <span>🖥️ Paradigma: OOP</span>
+            <span>🌐 Platform: JVM</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa Itu Java?</h2>
+            <p>
+                Java adalah bahasa pemrograman berorientasi objek (OOP) yang dikembangkan oleh Sun Microsystems
+                (sekarang dimiliki oleh Oracle). Java terkenal dengan prinsip "tulis sekali, jalankan di mana saja"
+                karena berjalan di atas JVM (Java Virtual Machine).
+            </p>
+
+            <h2>Struktur Program Dasar Java</h2>
+            <pre><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Halo, dunia!");
+    }
+}
+      </code></pre>
+            <ul>
+                <li><code>public class</code> → mendefinisikan kelas utama</li>
+                <li><code>main()</code> → titik awal eksekusi program</li>
+                <li><code>System.out.println()</code> → mencetak ke layar</li>
+            </ul>
+
+            <h2>Tipe Data Dasar</h2>
+            <ul>
+                <li><code>int</code> → bilangan bulat</li>
+                <li><code>double</code> → bilangan desimal</li>
+                <li><code>char</code> → karakter tunggal</li>
+                <li><code>String</code> → teks</li>
+                <li><code>boolean</code> → true atau false</li>
+            </ul>
+
+            <h3>Contoh Deklarasi Variabel</h3>
+            <pre><code class="language-java">
+int umur = 20;
+String nama = "Zet";
+double tinggi = 175.5;
+boolean isActive = true;
+      </code></pre>
+
+            <h2>Kontrol Alur</h2>
+
+            <h3><span class="text-xl font-bold">1. Percabangan (if/else)</span></h3>
+            <pre><code class="language-java">
+if (umur >= 18) {
+    System.out.println("Dewasa");
+} else {
+    System.out.println("Anak-anak");
+}
+      </code></pre>
+
+            <h3><span class="text-xl font-bold">2. Perulangan (loop)</span></h3>
+            <pre><code class="language-java">
+// for loop
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Ke - " + i);
+}
+      </code></pre>
+
+            <h2>Array dan ArrayList</h2>
+            <pre><code class="language-java">
+// Array
+int[] angka = {1, 2, 3};
+
+// ArrayList
+import java.util.ArrayList;
+ArrayList&lt;String&gt; namaSiswa = new ArrayList&lt;&gt;();
+namaSiswa.add("Ayu");
+namaSiswa.add("Budi");
+      </code></pre>
+
+            <h2>Fungsi / Method</h2>
+            <pre><code class="language-java">
+public static int tambah(int a, int b) {
+    return a + b;
+}
+      </code></pre>
+
+            <h2>Konsep OOP di Java</h2>
+            <p>Java mendukung 4 pilar OOP: <strong>Encapsulation, Abstraction, Inheritance, Polymorphism</strong>.</p>
+
+            <h3>Contoh Class dan Object</h3>
+            <pre><code class="language-java">
+public class Mahasiswa {
+    String nama;
+    int umur;
+
+    void perkenalan() {
+        System.out.println("Halo, saya " + nama + ", umur " + umur + " tahun.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Mahasiswa mhs = new Mahasiswa();
+        mhs.nama = "Gesya";
+        mhs.umur = 21;
+        mhs.perkenalan();
+    }
+}
+      </code></pre>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Java adalah bahasa yang andal dan banyak digunakan di industri. Setelah menguasai dasar-dasarnya, kamu
+                bisa lanjut ke topik seperti GUI, database, hingga Android development.
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

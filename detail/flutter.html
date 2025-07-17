@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengenalan Flutter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/flutter.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+      <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+               Belajar Flutter: Framework Mobile Masa Kini <br>
+                Panduan dasar untuk mulai ngoding aplikasi Android & iOS dengan satu codebase
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>📱 Mobile Development</span>
+            <span>🛠️ Framework: Flutter</span>
+            <span>👨‍💻 Bahasa: Dart</span>
+        </div>
+
+        <!-- Article -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa itu Flutter?</h2>
+            <p>
+                <strong>Flutter</strong> adalah framework open-source buatan Google untuk membangun aplikasi mobile,
+                web, dan desktop dari satu codebase.
+                Flutter menggunakan bahasa pemrograman <strong>Dart</strong> dan memiliki engine rendering sendiri,
+                sehingga UI-nya bisa konsisten di berbagai platform.
+            </p>
+
+            <h2>Kenapa Harus Pakai Flutter?</h2>
+            <ul>
+                <li><strong>🚀 Cepat & Produktif:</strong> Fitur Hot Reload memungkinkan pengembang melihat perubahan
+                    secara langsung.</li>
+                <li><strong>📱 UI Konsisten:</strong> Tidak bergantung ke komponen native, jadi desain bisa presisi
+                    sesuai keinginan.</li>
+                <li><strong>🔁 Reuse Codebase:</strong> Satu kode bisa dijalankan di Android, iOS, Web, bahkan Desktop.
+                </li>
+                <li><strong>💼 Backed by Google:</strong> Didukung dan dikembangkan langsung oleh Google, dengan
+                    komunitas yang besar.</li>
+            </ul>
+
+            <h2>Struktur Dasar Proyek Flutter</h2>
+            <ul>
+                <li><strong>/lib:</strong> Tempat kode Dart utama. Biasanya dimulai dari <code>main.dart</code></li>
+                <li><strong>/assets:</strong> Folder untuk menyimpan gambar, font, dsb.</li>
+                <li><strong>pubspec.yaml:</strong> File konfigurasi untuk dependencies dan aset</li>
+            </ul>
+
+            <h2>Contoh Kode Flutter</h2>
+            <pre><code class="language-dart">
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Halo Flutter',
+      home: Scaffold(
+        appBar: AppBar(title: Text('Halo Flutter')),
+        body: Center(child: Text('Hello, World!')),
+      ),
+    );
+  }
+}
+      </code></pre>
+
+            <h2>Widget di Flutter</h2>
+            <p>Semua elemen di Flutter adalah widget: dari <strong>Text</strong>, <strong>Button</strong>, sampai
+                <strong>Layout seperti Column dan Row</strong>.</p>
+            <ul>
+                <li><strong>StatelessWidget:</strong> Widget yang tidak berubah saat app berjalan.</li>
+                <li><strong>StatefulWidget:</strong> Widget yang bisa berubah (misal: toggle switch, counter).</li>
+                <li><strong>Material Widgets:</strong> Komponen UI standar Android</li>
+                <li><strong>Cupertino Widgets:</strong> Komponen UI ala iOS</li>
+            </ul>
+
+            <h2>Installasi Flutter</h2>
+            <ol>
+                <li><strong>1. Download Flutter SDK</strong> dari [flutter.dev](https://flutter.dev)</li>
+                <li><strong>2. Tambahkan ke PATH</strong> agar bisa akses dari terminal</li>
+                <li><strong>3. Jalankan <code>flutter doctor</code></strong> untuk cek environment</li>
+                <li><strong>4. Buat project dengan <code>flutter create namaprojek</code></strong></li>
+                <li><strong>5. Jalankan app pakai <code>flutter run</code></strong></li>
+            </ol>
+
+            <h2>Tips Pengembangan Flutter</h2>
+            <ul>
+                <li>🧪 Selalu gunakan <strong>Hot Reload</strong> saat pengembangan</li>
+                <li>🎯 Gunakan <strong>State Management</strong> (Provider, Riverpod, Bloc)</li>
+                <li>🎨 Rancang UI dulu di Figma sebelum coding</li>
+                <li>🔍 Pisahkan widget ke file terpisah untuk maintainabilitas</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Flutter cocok banget buat kamu yang pengen bikin aplikasi keren tapi efisien.
+                Dengan satu codebase dan komunitas yang aktif, Flutter bisa jadi pilihan utama dalam pengembangan mobile
+                modern.
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
