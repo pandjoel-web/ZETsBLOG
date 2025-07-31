@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dasar UML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .prose ul li {
+            margin-bottom: 0.75em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/uml.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Dasar Unified Modeling Language (UML)
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🧠 Bidang: Pemodelan Sistem</span>
+            <span>🖥️ Fokus: Analisis & Desain</span>
+            <span>💻 Alat: StarUML, Lucidchart</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa Itu UML?</h2>
+            <p>
+                UML (Unified Modeling Language) adalah bahasa pemodelan untuk memvisualisasikan dan mendesain sistem
+                perangkat lunak atau proses bisnis menggunakan diagram.
+            </p>
+
+            <h2>Mengapa UML Penting?</h2>
+            <ul>
+                <li>Memperjelas ide kompleks melalui visual.</li>
+                <li>Mendukung komunikasi tim teknis dan non-teknis.</li>
+                <li>Mengurangi kesalahan dengan perencanaan awal.</li>
+                <li>Menyediakan dokumentasi sistem.</li>
+            </ul>
+
+            <h2>Jenis Diagram UML</h2>
+            <ul>
+                <li><strong>Class Diagram</strong>: Struktur kelas dan hubungan.</li>
+                <li><strong>Use Case Diagram</strong>: Fungsi sistem dari sudut pengguna.</li>
+                <li><strong>Activity Diagram</strong>: Alur kerja atau proses.</li>
+                <li><strong>Sequence Diagram</strong>: Interaksi antar objek berdasarkan waktu.</li>
+            </ul>
+
+            <h2>Contoh Diagram</h2>
+
+            <h3><span class="text-xl font-bold">1. Use Case Diagram</span></h3>
+            <p>Sistem penjualan online:</p>
+            <pre><code class="language-text">
+Aktor: Pelanggan
+Use Case:
+- Login
+- Cari Produk
+- Checkout
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">2. Class Diagram</span></h3>
+            <p>Struktur kelas penjualan:</p>
+            <pre><code class="language-text">
+class Pelanggan {
+    - id: int
+    - nama: string
+    + beliProduk()
+}
+
+class Produk {
+    - id: int
+    - harga: double
+}
+            </code></pre>
+
+            <h2>Membuat Diagram UML</h2>
+            <ul>
+                <li><strong>StarUML</strong>: Gratis, ramah pemula.</li>
+                <li><strong>Lucidchart</strong>: Berbasis web, kolaboratif.</li>
+                <li><strong>Draw.io</strong>: Gratis, terintegrasi cloud.</li>
+            </ul>
+
+            <h2>Kapan Menggunakan UML?</h2>
+            <ul>
+                <li>Merancang perangkat lunak.</li>
+                <li>Mendokumentasikan sistem.</li>
+                <li>Memahami proses bisnis.</li>
+            </ul>
+
+            <h2>Tips Belajar UML</h2>
+            <ul>
+                <li>Mulai dengan Use Case atau Class Diagram.</li>
+                <li>Praktik dengan sistem sederhana, seperti toko online.</li>
+                <li>Pahami notasi UML (simbol, hubungan).</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                UML membantu merancang dan memahami sistem secara visual. Dengan diagram sederhana, Anda dapat
+                meningkatkan desain dan komunikasi proyek.
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

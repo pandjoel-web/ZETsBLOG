@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoSQL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/nosql.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Pengenalan Basis Data NoSQL
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🧠 Teknologi: NoSQL</span>
+            <span>🖥️ Paradigma: Non-Relational</span>
+            <span>💻 Platform: MongoDB, Cassandra, Redis, dll</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa Itu NoSQL?</h2>
+            <p>
+                NoSQL (Not Only SQL) adalah jenis basis data yang dirancang untuk menangani data yang tidak terstruktur
+                atau semi-terstruktur, berbeda dari basis data relasional tradisional (SQL). NoSQL mendukung
+                fleksibilitas dalam penyimpanan data, skalabilitas horizontal, dan performa tinggi untuk aplikasi modern
+                seperti aplikasi web, IoT, atau analitik real-time.
+            </p>
+
+            <h2>Mengapa Menggunakan NoSQL?</h2>
+            <ul>
+                <li><strong>Fleksibilitas Skema</strong>: Tidak memerlukan struktur tabel yang kaku seperti SQL.</li>
+                <li><strong>Skalabilitas</strong>: Mudah diskalakan secara horizontal di banyak server.</li>
+                <li><strong>Performa</strong>: Cepat untuk data besar dan query kompleks.</li>
+                <li><strong>Beragam Jenis Data</strong>: Mendukung dokumen, grafik, key-value, dan lainnya.</li>
+            </ul>
+
+            <h2>Jenis-Jenis Basis Data NoSQL</h2>
+            <ul>
+                <li><strong>Key-Value</strong> (contoh: Redis, DynamoDB): Menyimpan data sebagai pasangan kunci-nilai.
+                </li>
+                <li><strong>Document</strong> (contoh: MongoDB): Menyimpan data dalam format dokumen seperti JSON atau
+                    BSON.</li>
+                <li><strong>Column-Family</strong> (contoh: Cassandra): Data disimpan dalam kolom, cocok untuk analitik.
+                </li>
+                <li><strong>Graph</strong> (contoh: Neo4j): Untuk data dengan hubungan kompleks seperti jaringan sosial.
+                </li>
+            </ul>
+
+            <h2>Contoh Penggunaan NoSQL (MongoDB)</h2>
+            <p>
+                Berikut adalah contoh dasar menggunakan MongoDB, salah satu basis data NoSQL berbasis dokumen. Kita akan
+                membuat koleksi <code>pelanggan</code> dan melakukan operasi dasar.
+            </p>
+
+            <h3><span class="text-xl font-bold">1. Menyisipkan Dokumen</span></h3>
+            <p>Untuk menambahkan data ke koleksi:</p>
+            <pre><code class="language-javascript">
+db.pelanggan.insertOne({
+    id: 1,
+    nama: "Pandu",
+    umur: 18,
+    kota: "Solo"
+});
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">2. Mengambil Data</span></h3>
+            <p>Untuk mengambil semua dokumen atau dokumen tertentu:</p>
+            <pre><code class="language-javascript">
+-- Mengambil semua dokumen
+db.pelanggan.find();
+
+-- Mengambil dokumen dengan filter
+db.pelanggan.find({ umur: { $gt: 18 } });
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">3. Memperbarui Dokumen</span></h3>
+            <p>Untuk memperbarui data:</p>
+            <pre><code class="language-javascript">
+db.pelanggan.updateOne(
+    { id: 1 },
+    { $set: { kota: "Heaven" } }
+);
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">4. Menghapus Dokumen</span></h3>
+            <p>Untuk menghapus data:</p>
+            <pre><code class="language-javascript">
+db.pelanggan.deleteOne({ id: 1 });
+            </code></pre>
+
+            <h2>Struktur Dokumen di MongoDB</h2>
+            <p>
+                Berbeda dengan tabel SQL, NoSQL seperti MongoDB menggunakan dokumen JSON. Contoh dokumen dalam koleksi
+                <code>pelanggan</code>:
+            </p>
+            <pre><code class="language-json">
+{
+    "id": 1,
+    "nama": "Pandu",
+    "umur": 18,
+    "kota": "Solo"
+}
+            </code></pre>
+
+            <h2>Kapan Menggunakan NoSQL?</h2>
+            <ul>
+                <li>Data tidak terstruktur atau sering berubah.</li>
+                <li>Kebutuhan skalabilitas tinggi, seperti aplikasi dengan jutaan pengguna.</li>
+                <li>Proyek yang membutuhkan waktu pengembangan cepat tanpa skema kaku.</li>
+            </ul>
+
+            <h2>Tips Belajar NoSQL</h2>
+            <ul>
+                <li><strong>Praktik Langsung</strong>: Gunakan MongoDB Atlas (cloud) atau instal MongoDB secara lokal.
+                </li>
+                <li><strong>Pelajari Satu Jenis</strong>: Mulai dengan MongoDB untuk memahami basis data dokumen.</li>
+                <li><strong>Eksplorasi</strong>: Coba integrasi dengan aplikasi web menggunakan Node.js atau Python.
+                </li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                NoSQL menawarkan pendekatan fleksibel untuk mengelola data di era aplikasi modern. Dengan memahami
+                dasar-dasar seperti tipe data NoSQL dan operasi dasar, Anda dapat mulai membangun aplikasi yang skalabel
+                dan efisien.
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

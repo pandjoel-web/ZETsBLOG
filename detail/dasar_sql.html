@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dasar SQL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/sql.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Dasar Pemrograman Basis Data dengan SQL
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-6 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🧠 Bahasa: SQL</span>
+            <span>🖥️ Paradigma: Deklaratif</span>
+            <span>💻 Platform: RDBMS (MySQL, PostgreSQL, SQLite, dll)</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa Itu SQL?</h2>
+            <p>
+                SQL (Structured Query Language) adalah bahasa standar untuk mengelola dan memanipulasi basis data
+                relasional. SQL memungkinkan Anda melakukan operasi seperti membuat, membaca, memperbarui, dan menghapus
+                data (CRUD) pada sistem manajemen basis data relasional (RDBMS) seperti MySQL, PostgreSQL, atau SQLite.
+            </p>
+
+            <h2>Struktur Basis Data Relasional</h2>
+            <p>
+                Basis data relasional terdiri dari <strong>tabel</strong> yang menyimpan data dalam format baris dan
+                kolom. Setiap tabel memiliki:
+            <ul>
+                <li><strong>Kolom</strong>: Atribut atau field (misalnya, <code>nama</code>, <code>umur</code>).</li>
+                <li><strong>Baris</strong>: Catatan atau entri data individu.</li>
+                <li><strong>Kunci Primer (Primary Key)</strong>: Kolom unik untuk mengidentifikasi setiap baris
+                    (misalnya, <code>id</code>).</li>
+            </ul>
+            </p>
+            <p>Contoh tabel <code>pelanggan</code>:</p>
+            <table class="border border-gray-300">
+                <tr class="bg-gray-100">
+                    <th class="border border-gray-300 p-2">id</th>
+                    <th class="border border-gray-300 p-2">nama</th>
+                    <th class="border border-gray-300 p-2">umur</th>
+                    <th class="border border-gray-300 p-2">kota</th>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 p-2">1</td>
+                    <td class="border border-gray-300 p-2">Pandu</td>
+                    <td class="border border-gray-300 p-2">18</td>
+                    <td class="border border-gray-300 p-2">Solo</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 p-2">2</td>
+                    <td class="border border-gray-300 p-2">Gesya</td>
+                    <td class="border border-gray-300 p-2">18</td>
+                    <td class="border border-gray-300 p-2">heaven</td>
+                </tr>
+            </table>
+
+            <h2>Perintah Dasar SQL</h2>
+
+            <h3><span class="text-xl font-bold">1. Membuat Tabel (<code>CREATE TABLE</code>)</span></h3>
+            <p>Untuk membuat tabel baru:</p>
+            <pre><code class="language-sql">
+CREATE TABLE pelanggan (
+    id INT PRIMARY KEY,
+    nama VARCHAR(100),
+    umur INT,
+    kota VARCHAR(50)
+);
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">2. Menambahkan Data (<code>INSERT INTO</code>)</span></h3>
+            <p>Untuk menambahkan data ke tabel:</p>
+            <pre><code class="language-sql">
+INSERT INTO pelanggan (id, nama, umur, kota)
+VALUES (1, 'Pandu', 18, 'Solo');
+            </pre>
+
+            <h3><span class="text-xl font-bold">3. Mengambil Data (<code>SELECT</code>)</span></h3>
+            <p>Untuk mengambil data dari tabel:</p>
+            <pre><code class="language-sql">
+-- Mengambil semua kolom
+SELECT * FROM pelanggan;
+
+-- Mengambil kolom tertentu
+SELECT nama, kota FROM pelanggan;
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">4. Memfilter Data (<code>WHERE</code>)</span></h3>
+            <p>Untuk memfilter data berdasarkan kondisi:</p>
+            <pre><code class="language-sql">
+SELECT * FROM pelanggan WHERE umur > 17;
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">5. Memperbarui Data (<code>UPDATE</code>)</span></h3>
+            <p>Untuk memperbarui data yang sudah ada:</p>
+            <pre><code class="language-sql">
+UPDATE pelanggan
+SET kota = 'heaven'
+WHERE id = 1;
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">6. Menghapus Data (<code>DELETE</code>)</span></h3>
+            <p>Untuk menghapus data:</p>
+            <pre><code class="language-sql">
+DELETE FROM pelanggan WHERE id = 2;
+            </code></pre>
+
+            <h2>Pengelompokan dan Pengurutan</h2>
+
+            <h3><span class="text-xl font-bold">1. Mengurutkan Data (<code>ORDER BY</code>)</span></h3>
+            <p>Untuk mengurutkan hasil query:</p>
+            <pre><code class="language-sql">
+SELECT * FROM pelanggan ORDER BY umur DESC;
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">2. Mengelompokkan Data (<code>GROUP BY</code>)</span></h3>
+            <p>Untuk mengelompokkan data, sering digunakan dengan fungsi agregasi seperti <code>COUNT</code>,
+                <code>SUM</code>, atau <code>AVG</code>:</p>
+            <pre><code class="language-sql">
+SELECT kota, COUNT(*) as jumlah
+FROM pelanggan
+GROUP BY kota;
+            </code></pre>
+
+            <h2>💡Tips Belajar SQL</h2>
+            <ul>
+                <li><strong>Praktik Langsung</strong>: Gunakan alat seperti SQLite, MySQL Workbench, atau platform
+                    online seperti SQL Fiddle.</li>
+                <li><strong>Mulai dengan Kecil</strong>: Pahami satu perintah sebelum beralih ke yang lain.</li>
+                <li><strong>Eksplorasi</strong>: Coba query sederhana, lalu tambahkan kompleksitas seperti
+                    <code>JOIN</code> untuk menghubungkan tabel.</li>
+            </ul>
+            <br>
+
+            <h2><strong>● Kesimpulan</strong></h2>
+            <p>
+                SQL adalah alat yang sangat penting untuk mengelola basis data relasional. Dengan memahami dasar-dasar
+                ini, Anda dapat mulai membangun dan mengelola basis data untuk berbagai aplikasi, dari website hingga
+                sistem perusahaan.
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perancangan Sistem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: bold;
+        }
+
+        .prose p {
+            margin-bottom: 1.25em;
+        }
+
+        .prose ul li {
+            margin-bottom: 1em;
+            line-height: 1.75;
+        }
+
+        .prose h2,
+        .prose h3 {
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        .hero-bg {
+            background-image: url('../assets/img/perancangan_sistem.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 leading-relaxed">
+
+    <!-- Hero Image -->
+    <header class="hero-bg h-64 md:h-96 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center px-4">
+            <h1 class="text-white text-3xl md:text-5xl text-center font-bold drop-shadow-lg">
+                Dasar Perancangan Sistem
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-12">
+
+        <!-- Metadata -->
+        <div class="mb-8 text-sm text-gray-500 flex gap-4 flex-wrap">
+            <span>🧠 Bidang: Sistem Informasi</span>
+            <span>🖥️ Fokus: Desain & Analisis</span>
+            <span>💻 Alat: UML, Flowchart, ERD</span>
+        </div>
+
+        <!-- Artikel -->
+        <article class="prose prose-sm sm:prose lg:prose-lg prose-gray max-w-none">
+
+            <h2>Apa Itu Perancangan Sistem?</h2>
+            <p>
+                Perancangan sistem adalah proses merancang solusi teknologi untuk kebutuhan bisnis, meliputi analisis,
+                desain, dan perencanaan sistem informasi.
+            </p>
+
+            <h2>Mengapa Perancangan Sistem Penting?</h2>
+            <ul>
+                <li>1. Memahami kebutuhan pengguna secara jelas.</li>
+                <li>2. Mengurangi kesalahan selama pengembangan.</li>
+                <li>3. Meningkatkan efisiensi proses bisnis.</li>
+                <li>4. Memfasilitasi komunikasi dengan tim dan klien.</li>
+            </ul>
+
+            <h2 class="text-5xl"><strong>Tahapan Perancangan Sistem</strong></h2>
+            <ul>
+                <li><strong>Analisis</strong>: Mengidentifikasi kebutuhan pengguna.</li>
+                <li><strong>Desain</strong>: Membuat model sistem (contoh: UML).</li>
+                <li><strong>Implementasi</strong>: Membangun sistem sesuai desain.</li>
+                <li><strong>Pengujian</strong>: Memastikan sistem berfungsi dengan baik.</li>
+            </ul>
+
+            <h2 class="text-5xl"><strong>Alat Perancangan Sistem</strong></h2>
+            <ul>
+                <li><strong>UML</strong>: Diagram untuk struktur dan alur sistem.</li>
+                <li><strong>Flowchart</strong>: Visualisasi proses kerja.</li>
+                <li><strong>ERD</strong>: Model hubungan data.</li>
+            </ul>
+
+            <h2>Contoh Perancangan Sistem</h2>
+            <p>Sistem penjualan online sederhana:</p>
+
+            <h3><span class="text-xl font-bold">1. Use Case Diagram</span></h3>
+            <p>Fungsi utama:</p>
+            <pre><code class="language-text">
+Aktor: Pelanggan
+Use Case:
+- Cari Produk
+- Tambah Keranjang
+- Checkout
+            </code></pre>
+
+            <h3><span class="text-xl font-bold">2. Entity Relationship Diagram (ERD)</span></h3>
+            <p>Struktur basis data:</p>
+            <pre><code class="language-text">
+Entitas: Pelanggan
+- id: int (PK)
+- nama: string
+
+Entitas: Pesanan
+- id: int (PK)
+- id_pelanggan: int (FK)
+            </code></pre>
+
+            <h2>Kapan Menggunakan Perancangan Sistem?</h2>
+            <ul>
+                <li>Merancang aplikasi baru.</li>
+                <li>Memperbaiki proses bisnis.</li>
+                <li>Mendokumentasikan sistem.</li>
+            </ul>
+
+            <h2>Tips Belajar Perancangan Sistem</h2>
+            <ul>
+                <li>Kuasai UML dan ERD.</li>
+                <li>Praktik dengan sistem sederhana.</li>
+                <li>Gunakan alat seperti StarUML.</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Perancangan sistem memastikan solusi teknologi efisien dan terstruktur, mendukung kebutuhan bisnis
+                dengan desain yang jelas.
+            </p>
+
+        </article>
+
+        <!-- Tombol Kembali -->
+        <div class="mt-12">
+            <a href="../index.html"
+                class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                ← Kembali ke Beranda
+            </a>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

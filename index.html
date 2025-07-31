@@ -115,6 +115,20 @@
                     <li><a href="#" class="hover:text-black">Dasar Java</a></li>
                 </ul>
             </div>
+            <div>
+                <h3 class="font-bold text-gray-600 mb-2">Basis Data</h3>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-black">Dasar SQL</a></li>
+                    <li><a href="#" class="hover:text-black">NoSQL</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-gray-600 mb-2">Sistem Informasi</h3>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-black">Dasar UML</a></li>
+                    <li><a href="#" class="hover:text-black">Jaringan</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -122,7 +136,7 @@
     <main id="mainContent" class="pt-15 opacity-0">
         <section class="hero min-h-screen flex flex-col items-center justify-center text-center px-4">
             <div class="pointer-events-auto">
-                <h1 class="text-5xl md:text-7xl font-bold  mb-4">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
                     Selamat datang di <span class="text-blue-600">Blog</span> sayaa..
                 </h1>
                 <p class="text-4xl text-gray-500 max-w-xl">わたしのブログへようこそ</p>
@@ -135,6 +149,14 @@
                     <h2 class="text-4xl md:text-6xl font-bold mb-4 uppercase">ZET`s BLOG</h2>
                     <p class="text-gray-500 max-w-xl mx-auto text-lg">dimana saya bisa berbagi beberapa hal kepada
                         kalian</p>
+                </div>
+                <div class="mb-8 flex justify-center space-x-4 flex-wrap">
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300" data-category="all">Semua</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300" data-category="Web">Web</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300" data-category="PBB">PBB</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300" data-category="PBTGM">PBTGM</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300" data-category="Basis Data">Basis Data</button>
+                    <button class="category-btn px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300" data-category="Sistem">Sistem Informasi</button>
                 </div>
                 <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
@@ -152,12 +174,17 @@
             { id: 6, title: "Widget", category: "PBB", image: "assets/img/widget.png", link: "/detail/widget.html" },
             { id: 7, title: "Dasar C#", category: "PBTGM", image: "assets/img/csharp.png", link: "/detail/dasar_csharp.html" },
             { id: 8, title: "Dasar Java", category: "PBTGM", image: "assets/img/java.png", link: "/detail/dasar_java.html" },
+            { id: 9, title: "Dasar SQL", category: "Basis Data", image: "assets/img/sql.png", link: "/detail/dasar_sql.html" },
+            { id: 10, title: "NoSQL", category: "Basis Data", image: "assets/img/nosql.png", link: "/detail/nosql.html" },
+            { id: 11, title: "Dasar UML", category: "Sistem", image: "assets/img/uml.png", link: "/detail/dasar_uml.html" },
+            { id: 12, title: "Perancangan Sistem", category: "Sistem", image: "assets/img/perancangan_sistem.png", link: "/detail/perancangan_sistem.html" },
         ];
 
         const gallery = document.getElementById('gallery');
         const searchInput = document.getElementById('navbarSearchInput');
         const searchDropdown = document.getElementById('searchDropdown');
         const gallerySection = document.getElementById('gallery');
+        const categoryButtons = document.querySelectorAll('.category-btn');
 
         function renderKarya(list = artikelList) {
             gallery.innerHTML = "";
@@ -179,6 +206,31 @@
         }
 
         renderKarya();
+
+        // Category filter functionality
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-gray-700');
+                });
+                button.classList.remove('bg-gray-100', 'text-gray-700');
+                button.classList.add('bg-blue-600', 'text-white');
+
+                if (category === 'all') {
+                    renderKarya();
+                } else {
+                    const filtered = artikelList.filter(item => item.category === category);
+                    renderKarya(filtered);
+                }
+                searchInput.value = ''; // Clear search input
+                gsap.to(searchDropdown, {
+                    y: -10, opacity: 0, duration: 0.2,
+                    onComplete: () => searchDropdown.classList.add('hidden')
+                });
+            });
+        });
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
